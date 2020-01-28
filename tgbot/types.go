@@ -11,7 +11,7 @@ type User struct {
 	Id int `json:"id"`
 	// True, if this user is a bot
 	IsBot bool `json:"is_bot"`
-	// 	User‘s or bot’s first name
+	// User‘s or bot’s first name
 	FirstName string `json:"first_name"`
 	// Optional. User‘s or bot’s last name
 	LastName string `json:"last_name,omitempty"`
@@ -37,7 +37,7 @@ type Message struct {
 	Date int `json:"date"`
 	// Conversation the message belongs to
 	Chat *Chat `json:"chat"`
-	// 	Optional. For forwarded messages, sender of the original message
+	// Optional. For forwarded messages, sender of the original message
 	ForwardFrom *User `json:"forward_from,omitempty"`
 	// Optional. For messages forwarded from channels, information about the original channel
 	ForwardFromChat *Chat `json:"forward_from_chat,omitempty"`
@@ -82,7 +82,7 @@ type Message struct {
 	Sticker *Sticker `json:"sticker"`
 	// Optional. Message is a video, information about the video
 	Video *Video `json:"video"`
-	// 	Optional. Message is a voice message, information about the file
+	// Optional. Message is a voice message, information about the file
 	Voice *Voice `json:"voice"`
 	// Optional. Message is a video note, information about the video message
 	VideoNoe *VideoNote `json:"video_noe"`
@@ -94,7 +94,7 @@ type Message struct {
 	Location *Location `json:"location"`
 	// Optional. Message is a venue, information about the venue
 	Venue *Venue `json:"venue"`
-	// 	Optional. Message is a native poll, information about the poll
+	// Optional. Message is a native poll, information about the poll
 	Poll *Poll `json:"poll"`
 	// Optional. New members that were added to the group or supergroup and information about them
 	// (the bot itself may be one of these members)
@@ -187,7 +187,7 @@ type Chat struct {
 	// in interpreting it. But it is smaller than 52 bits, so a signed 64 bit integer or double-precision
 	// float type are safe for storing this identifier.
 	Id int64 `json:"id"`
-	// 	Type of chat, can be either “private”, “group”, “supergroup” or “channel”.
+	// Type of chat, can be either “private”, “group”, “supergroup” or “channel”.
 	Type string `json:"type"`
 	// Optional. Title, for supergroups, channels and group chats
 	Title string `json:"title,omitempty"`
@@ -226,7 +226,7 @@ type MessageEntity struct {
 	// “strikethrough” (strikethrough text), “code” (monowidth string), “pre” (monowidth block),
 	// “text_link” (for clickable text URLs), “text_mention” (for users without usernames)
 	Type string `json:"type"`
-	// 	Offset in UTF-16 code units to the start of the entity.
+	// Offset in UTF-16 code units to the start of the entity.
 	Offset int `json:"offset"`
 	// Length of the entity in UTF-16 code units.
 	Length int `json:"length"`
@@ -452,13 +452,13 @@ type Poll struct {
 	Options *[]PollAnswer `json:"options"`
 	// Total number of users that voted in the poll
 	TotalVoterCount int `json:"total_voter_count"`
-	// 	True, if the poll is closed
+	// True, if the poll is closed
 	IsClosed bool `json:"is_closed"`
 	// True, if the poll is anonymous
 	IsAnonymous bool `json:"is_anonymous"`
 	// Poll type, currently can be “regular” or “quiz”
 	Type string `json:"type"`
-	// 	True, if the poll allows multiple answers
+	// True, if the poll allows multiple answers
 	AllowsMultipleAnswers bool `json:"allows_multiple_answers"`
 	// Optional. 0-based identifier of the correct answer option. Available only for polls in the quiz mode,
 	// which are closed, or was sent (not forwarded) by the bot or to the private chat with the bot.
@@ -545,7 +545,7 @@ type OrderInfo struct {
 	PhoneNumber string `json:"phone_number,omitempty"`
 	// Optional. User email
 	Email string `json:"email,omitempty"`
-	// 	Optional. User shipping address
+	// Optional. User shipping address
 	ShippingAddress *ShippingAddress `json:"shipping_address,omitempty"`
 }
 
@@ -559,7 +559,7 @@ type SuccessfulPayment struct {
 	InvoicePayload string `json:"invoice_payload"`
 	// Optional. Identifier of the shipping option chosen by the user
 	ShippingOptionId string `json:"shipping_option_id,omitempty"`
-	// 	Optional. Order info provided by the user
+	// Optional. Order info provided by the user
 	OrderInfo OrderInfo `json:"order_info,omitempty"`
 	// Telegram payment identifier
 	TelegramPaymentChargeId string `json:"telegram_payment_charge_id"`
